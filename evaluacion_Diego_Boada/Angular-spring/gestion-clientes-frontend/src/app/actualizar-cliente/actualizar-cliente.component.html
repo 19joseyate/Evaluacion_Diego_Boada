@@ -1,0 +1,211 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Edicion de Cliente</h3>
+    <form (ngSubmit)= "onSubmit()" #clienteForm = "ngForm">
+        <div class="form-group">
+            <label>Cedula :</label>
+            <input type="text" 
+            class="form-control" 
+            id="cedula" 
+            [(ngModel)]="cliente.cedula" 
+            name="cedula"
+            required
+            minlength="4"
+            maxlength="10"
+            placeholder="Digite su Cedula"
+            #cedula = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+                <div *ngIf="cedula.errors?.['required']">
+                    Digite su Cedula porfavor
+                </div>
+                <div *ngIf="cedula.errors?.['minlength']">
+                    La cedula debe tener por lo minimo 4 caracteres
+                </div>
+                <div *ngIf="cedula.errors?.['maxlength']">
+                    La cedula debe tener maximo 15 caracteres
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            <label>Nombre :</label>
+            <input type="text" 
+            class="form-control" 
+            id="nombre" 
+            [(ngModel)]="cliente.nombre" 
+            name="nombre"
+            required
+            minlength="4"
+            maxlength="15"
+            placeholder="Digite su nombre"
+            #nombre = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf="nombre.errors?.['required']">
+                    Digite su nombre porfavor
+                </div>
+                <div *ngIf="nombre.errors?.['minlength']">
+                    El nombre debe tener por lo minimo 4 caracteres
+                </div>
+                <div *ngIf="nombre.errors?.['maxlength']">
+                    El nombre debe tener maximo 15 caracteres
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Apellido :</label>
+            <input type="text" 
+            class="form-control" 
+            id="apellido" 
+            [(ngModel)]="cliente.apellido" 
+            name="apellido"
+            required
+            minlength="4"
+            maxlength="15"
+            placeholder="Digite su apellido"
+            #apellido = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                <div *ngIf="apellido.errors?.['required']">
+                    Digite su apellido porfavor
+                </div>
+                <div *ngIf="apellido.errors?.['minlength']">
+                    El apellido debe tener por lo minimo 4 caracteres
+                </div>
+                <div *ngIf="apellido.errors?.['maxlength']">
+                    El apellido debe tener maximo 15 caracteres
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Fecha de Nacimiento :</label>
+            <input type="text" 
+            class="form-control" 
+            id="fecha_nacimiento" 
+            [(ngModel)]="cliente.fecha_nacimiento" 
+            name="fecha_nacimiento"
+            required
+            minlength="7"
+            maxlength="10"
+            placeholder="Digite su fecha de nacimiento"
+            #fecha_nacimiento = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="fecha_nacimiento.invalid && (fecha_nacimiento.dirty || fecha_nacimiento.touched)">
+                <div *ngIf="fecha_nacimiento.errors?.['required']">
+                    Digite su fecha de nacimiento porfavor
+                </div>
+                <div *ngIf="fecha_nacimiento.errors?.['minlength']">
+                    La fecha nacimiento debe tener por lo minimo 4 caracteres
+                </div>
+                <div *ngIf="fecha_nacimiento.errors?.['maxlength']">
+                    La fecha de nacimiento debe tener maximo 10 caracteres
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Ciudad :</label>
+            <input type="text" 
+            class="form-control" 
+            id="ciudad" 
+            [(ngModel)]="cliente.ciudad"
+             name="ciudad"
+             required
+            minlength="4"
+            maxlength="15"
+            placeholder="Digite su ciudad"
+            #ciudad = "ngModel"
+             >
+             <div class="alert alert-danger" *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)">
+                <div *ngIf="ciudad.errors?.['required']">
+                    Digite su ciudad porfavor
+                </div>
+                <div *ngIf="ciudad.errors?.['minlength']">
+                    La ciudad  debe tener por lo minimo 4 caracteres
+                </div>
+                <div *ngIf="ciudad.errors?.['maxlength']">
+                    La ciudad debe tener maximo 10 caracteres
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Email :</label>
+            <input type="email" 
+            class="form-control" 
+            id="email" 
+            [(ngModel)]="cliente.email" 
+            name="email"
+            pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+            require
+            placeholder="Digite su email"
+            #email = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors?.['required']">
+                    Digite su email porfavor
+                </div>
+                <div *ngIf="email.errors?.['pattern']">
+                    Digite el Email con el siguiente formato : ejemplo100@gmail.com
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Telefono :</label>
+            <input type="text" 
+            class="form-control" 
+            id="telefono" 
+            [(ngModel)]="cliente.telefono" 
+            name="telefono"
+            required
+            minlength="7"
+            maxlength="10"
+            placeholder="Digite su telefono"
+            #telefono = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+                <div *ngIf="telefono.errors?.['required']">
+                    Digite su telefono porfavor
+                </div>
+                <div *ngIf="telefono.errors?.['minlength']">
+                    El telefono  debe tener por lo minimo 7 caracteres
+                </div>
+                <div *ngIf="telefono.errors?.['maxlength']">
+                    El telefono debe tener maximo 10 caracteres
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Ocupacion :</label>
+            <input type="text"
+            class="form-control" 
+            id="ocupacion" 
+            [(ngModel)]="cliente.ocupacion" 
+            name="ocupacion"
+            required
+            minlength="4"
+            maxlength="15"
+            placeholder="Digite su ocupacion"
+            #ocupacion = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="ocupacion.invalid && (ocupacion.dirty || ocupacion.touched)">
+                <div *ngIf="ocupacion.errors?.['required']">
+                    Digite su ocupacion porfavor
+                </div>
+                <div *ngIf="ocupacion.errors?.['minlength']">
+                    La ocupacion  debe tener por lo minimo 4 caracteres
+                </div>
+                <div *ngIf="ocupacion.errors?.['maxlength']">
+                    La ocupacion debe tener maximo 15 caracteres
+                </div>
+            </div>
+
+        </div>
+        <button class="btn btn-success" [disabled]="!clienteForm.form.valid">Guardar</button>
+    </form>
+</div>
